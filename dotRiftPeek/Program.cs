@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace dotRiftPeek
+namespace DotRiftPeek
 {
     public class Program
     {
@@ -21,9 +21,8 @@ namespace dotRiftPeek
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder
-                    .UseElectron(args)
-                    .UseStartup<Startup>();
+                    webBuilder.UseElectron(args);
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Endpoint";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Function
+
+<div style="border-radius:3px;border:1px solid #74a8d1;width:75vw;margin:auto">
+    <div style="background-color:#e7f0f7;color:#333;border-color:#74a8d1;border-bottom:1px solid #74a8d1;border-top-left-radius:3px;border-top-right-radius:3px;">
+        <h3 style="font-size:16px;margin-top:0;margin-bottom:0;color:white;background:#333;padding:5px;font-weight:bold;border-top-left-radius:3px;border-top-right-radius:3px;">
+            <span style="background:#297cc3;padding:4px;margin-left:-5px;border-top-left-radius:3px;border-top-right-radius:3px;font-weight:bold;padding-left:6px;padding-right:6px;">@Model.HttpMethod?.ToUpper()</span>
+            <span style="padding:4px;font-weight:lighter;">@Model.url</span>
+        </h3>
+        <span style="padding:2px;">Tags: <a href="#">@Model.url?.Split("/")[1]</a></span>
+    </div>
+    <div style="padding:10px 15px;">
+        <h4>DESCRIPTION</h4>
+        <hr/>
+        <h4>REQUEST PARAMETERS</h4>
+    </div>
+</div>
+

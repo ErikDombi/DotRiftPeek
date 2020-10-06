@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Dictionary<string, List<Function>>
+<h1>Functions</h1>
+@foreach (var tags in Model)
+{
+    <button type="button" class="collapsible">/@tags.Key/</button>
+    <div class="content">
+        @foreach (var Event in tags.Value.OrderBy(t => t.url).Where(t => !string.IsNullOrWhiteSpace(t.url) && !string.IsNullOrWhiteSpace(t.HttpMethod)))
+        {
+            <div style="border-radius:3px;border:1px solid #74a8d1;width:100%;margin:auto;margin-bottom:20px;background:white;">
+                <div style="background-color:#e7f0f7;color:#333;border-color:#74a8d1;border-bottom:1px solid #74a8d1;border-top-left-radius:3px;border-top-right-radius:3px;">
+                    <h3 style="font-size:16px;margin-top:0;margin-bottom:0;color:white;background:#333;padding:5px;font-weight:bold;border-top-left-radius:3px;border-top-right-radius:3px;">
+                        <span style="background:#297cc3;padding:4px;margin-left:-5px;border-top-left-radius:3px;border-top-right-radius:3px;font-weight:bold;padding-left:6px;padding-right:6px;">@Event.HttpMethod?.ToUpper()</span>
+                        <span style="padding:4px;font-weight:lighter;">@Event.url</span>
+                    </h3>
+                    <span style="padding:2px;">Tags: <a href="#">@Event.url?.Split("/")[1]</a></span>
+                </div>
+                <div style="padding:10px 15px;">
+                    <h4>DESCRIPTION</h4>
+                    <hr />
+                    <h4>REQUEST PARAMETERS</h4>
+                </div>
+            </div>
+
+
+        }
+    </div>
+}

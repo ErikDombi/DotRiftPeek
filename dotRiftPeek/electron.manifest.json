@@ -1,15 +1,15 @@
 {
-  "executable": "dotRiftPeek",
+  "executable": "DotRiftPeek",
   "splashscreen": {
     "imageFile": ""
   },
-  "name": "dotRiftPeek",
+  "name": "DotRiftPeek",
   "author": "",
   "singleInstance": false,
   "environment": "Production",
   "build": {
-    "appId": "com.dotRiftPeek.app",
-    "productName": "dotRiftPeek",
+    "appId": "com.DotRiftPeek.app",
+    "productName": "DotRiftPeek",
     "copyright": "Copyright © 2020",
     "buildVersion": "1.0.0",
     "compression": "maximum",

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ElectronNET.API;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -43,6 +44,13 @@ namespace dotRiftPeek
             {
                 endpoints.MapControllers();
             });
+
+            Task.Run(async () => await Bootstrap());
+        }
+
+        public async Task Bootstrap()
+        {
+            await Electron.WindowManager.CreateWindowAsync();
         }
     }
 }
